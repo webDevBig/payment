@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Payment</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="fonts/segoe/style.css" />
+
+    <link rel="stylesheet" href="css/login-style.css" />
+</head>
+
+<body style="max-width: 450px; margin: 0 auto">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-cus-blue">
+            <div class="container">
+                <div class="d-flex  align-items-center">
+                    <a class="navbar-brand" href="#"><img class="p-2" src="img/logo.png" alt="195" /></a>
+                    <span class="sub-directory">/ profile</span>
+                </div>
+
+
+                <div class="d-flex">
+                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="profile-dashboard.html"
+                        id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="" aria-expanded="false">
+                        <img src="img/profile.png" class="profile-icon-sm mx-2" height="36" loading="lazy" />
+                    </a>
+
+                    <!-- Dropdown menu  -->
+                    <div class="dropdown">
+                        <button class="btn shadow-none px-2" type="button" id="dropdownMenuButton"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v text-white"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="settings-free.html">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Subscription</a></li>
+                            <li>
+                                <a class="dropdown-item" href="profile-transaction.html">Transactions</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Call History</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-wrapper profile-service-container payment-page">
+        <div class="container profile-dashboard-wrapper d-flex flex-column position-relative">
+            <div class="content-header setting-free-header">
+                <h3>Payment</h3>
+            </div>
+            <div>
+                <div class="col-12">
+                    <div class="input-info">
+                        <p class="paratext-1l">Please select a payment method</p>
+                    </div>
+                    <div class="period-box">
+                        <button type="button" class="btn card-btn" autocomplete="off" aria-pressed="true"><span
+                                class="visa"></span>
+                            Credit Card</button>
+
+                        <button type="button" class="btn card-btn" autocomplete="off" aria-pressed="true"><span
+                                class="bancontact"></span>
+                            Bancontact</button>
+                        <button type="button" class="btn card-btn" autocomplete="off" aria-pressed="true"><span
+                                class="PayPal"></span>
+                            PayPal</button>
+                        <button type="button" class="btn card-btn" autocomplete="off" aria-pressed="true">
+                            <span class="bank"></span>Bank transfer</button>
+                    </div>
+                </div>
+                <div class="flex-fill flex-vertical">
+                    <div class="card-data flex-fill flex-vertical">
+                        <div class="input-info">
+                            <h3 class="heading-2b">Card Number</h3>
+                            <p class="paratext-1l">Enter 16-digit card number on the card</p>
+                        </div>
+
+                        <!-- Card Field -->
+                        <div class="">
+                            <div class="card-number flex-vertical-center flex-fill">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
+                                    <path fill="#ff9800" d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z" />
+                                    <path fill="#d50000" d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z" />
+                                    <path fill="#ff3d00"
+                                        d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z" />
+                                </svg>
+                                <input type="text" placeholder="0000 0000 0000 0000" class="form-control"
+                                    id="cardNumber" maxlength="19" name="cardNumber" data-bound="carddigits_mock"
+                                    data-def="0000 0000 0000 0000" required />
+                            </div>
+                        </div>
+
+                        <!-- Expiry Date -->
+                        <div class="col-12">
+                            <div class="input-info">
+                                <h3 class="heading-2b">Expiry Date</h3>
+                                <p class="paratext-1l">Enter the expiration date of the card</p>
+                            </div>
+                            <div class="row-12">
+                                <div class="form-outline date-input">
+                                    <input class="form-control" data-bound="mm_mock" data-def="00" type="number" min="1"
+                                        max="12" step="1" placeholder="MM" maxlength="2" required />
+                                </div>
+                                <span class="m-md">/</span>
+                                <div class="form-outline date-input">
+                                    <input class="form-control" data-bound="yy_mock" data-def="01" type="number"
+                                        min="23" max="99" step="1" placeholder="YY" maxlength="2" required />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- CCV Number -->
+                        <div class="col-12">
+                            <div class="input-info">
+                                <h3 class="heading-2b">CVC Number</h3>
+                                <p class="paratext-1l">Enter card verification code from the back of the card</p>
+                            </div>
+                            <div class="row-12">
+                                <div class="form-outline date-input">
+                                    <input id="cvc" type="password" class="form-control" maxlength="3" placeholder="•••"
+                                        required />
+                                    <i class="fas fa-eye-slash toggle-password"></i>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Name -->
+                        <div class="col-12">
+                            <div class="input-info">
+                                <h3 class="heading-2b">Cardholder Name</h3>
+                                <p class="paratext-1l">Enter cardholder's name</p>
+                            </div>
+                            <div class="row-12">
+                                <div class="form-outline">
+                                    <input id="name" data-bound="name_mock" data-def="Mr. Cardholder" type="text"
+                                        class="form-control" placeholder="Cardholder Name" required />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row-12 total-row">
+                        <div class="input-info">
+                            <h3 class="heading-2b">Total Amount</h3>
+                            <p class="paratext-1l">Including VAT</p>
+                        </div>
+                        <div class="input-info">
+                            <h3 class="heading-2b">123$</h3>
+                        </div>
+                    </div>
+                    <div class="action flex-center">
+                        <button type="button" class="btn btn-primary bg-cus-blue mt-4 ms-auto">
+                            <i class="fas fa-check me-2"></i>
+                            Pay Now
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <footer class="bg-cus-blue setting-preferences" style="margin: 0 auto; max-width: 450px;">
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col footer-tab text-center">
+                        <a href="index-with-data.html">
+                            <i class="fas fa-home"></i>
+                            <p>Home</p>
+                        </a>
+                    </div>
+                    <div class="col footer-tab text-center">
+                        <a href="chat-overview.html">
+                            <i class="far fa-comment-dots"></i>
+                            <span class="badge rounded-pill badge-notification bg-white">9</span>
+                            <p>Chat</p>
+                        </a>
+                    </div>
+                    <div class="col footer-tab text-center">
+                        <a href="booking-actions.html">
+                            <i class="far fa-bookmark"></i>
+                            <span class="badge rounded-pill badge-notification bg-white">134</span>
+                            <p>Bookings</p>
+                        </a>
+                    </div>
+                    <div class="col footer-tab text-center">
+                        <a href="profile-dashboard.html">
+                            <i class="far fa-user"></i>
+                            <p>Profile</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.getElementById("cardNumber").addEventListener("keyup", function (e) {
+            var val = this.value;
+            var newval = "";
+            val = val.replace(/\s/g, "");
+            for (var i = 0; i < val.length; i++) {
+                if (i % 4 == 0 && i > 0) newval = newval.concat(" ");
+                newval = newval.concat(val[i]);
+            }
+            this.value = newval;
+        });
+
+        var togglePasswordElements = document.querySelectorAll(".toggle-password");
+
+        togglePasswordElements.forEach(function (togglePasswordElement) {
+            togglePasswordElement.addEventListener("click", function () {
+                this.classList.toggle("fa-eye");
+                this.classList.toggle("fa-eye-slash");
+                var input = document.querySelector("#cvc");
+                if (input.getAttribute("type") === "password") {
+                    input.setAttribute("type", "text");
+                } else {
+                    input.setAttribute("type", "password");
+                }
+            });
+        });
+        var gender_btn = document.querySelectorAll('.card-btn');
+        [].forEach.call(gender_btn, function (el) {
+            el.onclick = function (e) {
+                for (var i = 0; i < gender_btn.length; i++) {
+                    gender_btn[i].classList.remove('active');
+                }
+                el.classList.toggle('active');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>VIP Subscription</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="fonts/segoe/style.css" />
+
+    <link rel="stylesheet" href="css/login-style.css" />
+</head>
+
+<body style="max-width: 450px; margin: 0 auto">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-cus-blue">
+            <div class="container">
+                <div class="d-flex  align-items-center">
+                    <a class="navbar-brand" href="#"><img class="p-2" src="img/logo.png" alt="195" /></a>
+                    <span class="sub-directory">/ profile</span>
+                </div>
+
+
+                <div class="d-flex">
+                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="profile-dashboard.html"
+                        id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="" aria-expanded="false">
+                        <img src="img/profile.png" class="profile-icon-sm mx-2" height="36" loading="lazy" />
+                    </a>
+
+                    <!-- Dropdown menu  -->
+                    <div class="dropdown">
+                        <button class="btn shadow-none px-2" type="button" id="dropdownMenuButton"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v text-white"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="settings-free.html">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Subscription</a></li>
+                            <li>
+                                <a class="dropdown-item" href="profile-transaction.html">Transactions</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Call History</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-wrapper profile-service-container vip-subscription">
+        <div class="container profile-dashboard-wrapper d-flex flex-column position-relative">
+            <div class="content-header setting-free-header">
+                <h3>VIP Subscription</h3>
+            </div>
+            <div>
+                <div class="col-12">
+                    <div class="input-info">
+                        <h3 class="heading-2b">Period</h3>
+                        <p class="paratext-1l">Please choose your period</p>
+                    </div>
+                    <div class="period-box">
+                        <button type="button" class="btn period-btn" autocomplete="off" aria-pressed="true">Daily <br />
+                            2€</button>
+                        <button type="button" class="btn period-btn" autocomplete="off" aria-pressed="true">Weekly
+                            <br /> 20€</button>
+                        <button type="button" class="btn period-btn" autocomplete="off" aria-pressed="true">Monthly
+                            <br /> 30€</button>
+                        <button type="button" class="btn period-btn" autocomplete="off" aria-pressed="true">Quarter
+                            <br /> 40€</button>
+                        <button type="button" class="btn period-btn" autocomplete="off" aria-pressed="true">Yearly
+                            <br /> 50€</button>
+                    </div>
+                </div>
+                <div class="row-12">
+                    <div class="input-info">
+                        <h3 class="heading-2b">Coupon code</h3>
+                    </div>
+                    <div class="form-outline">
+                        <input type="text" class="form-control" id="validationCustom09" value="" required />
+                    </div>
+                    <button type="button" class="btn btn-outline-info aply-btn d-flex align-items-center"
+                        data-mdb-ripple-color="dark">
+                        <span class="btn-text">Aply</span>
+                    </button>
+                </div>
+                <div class="row-12 total-row">
+                    <div class="input-info">
+                        <h3 class="heading-2b">Total Amount</h3>
+                        <p class="paratext-1l">Including VAT</p>
+                    </div>
+                    <div class="input-info">
+                        <h3 class="heading-2b">123$</h3>
+                    </div>
+                </div>
+                <div class="col-12 checkout-row">
+                    <div class="input-info">
+                        <p class="paratext-1l">By continue, you agree on Terms and Conditions</p>
+                    </div>
+                    <a href="#">
+                        <button type="button" class="btn btn-primary bg-cus-blue mt-4 ms-auto">
+                            <i class="fas fa-check me-2"></i>
+                            Checkout
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-cus-blue setting-preferences" style="margin: 0 auto; max-width: 450px;">
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col footer-tab text-center">
+                        <a href="index-with-data.html">
+                            <i class="fas fa-home"></i>
+                            <p>Home</p>
+                        </a>
+                    </div>
+                    <div class="col footer-tab text-center">
+                        <a href="chat-overview.html">
+                            <i class="far fa-comment-dots"></i>
+                            <span class="badge rounded-pill badge-notification bg-white">9</span>
+                            <p>Chat</p>
+                        </a>
+                    </div>
+                    <div class="col footer-tab text-center">
+                        <a href="booking-actions.html">
+                            <i class="far fa-bookmark"></i>
+                            <span class="badge rounded-pill badge-notification bg-white">134</span>
+                            <p>Bookings</p>
+                        </a>
+                    </div>
+                    <div class="col footer-tab text-center">
+                        <a href="profile-dashboard.html">
+                            <i class="far fa-user"></i>
+                            <p>Profile</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript">
+        var gender_btn = document.querySelectorAll('.period-btn');
+        [].forEach.call(gender_btn, function (el) {
+            el.onclick = function (e) {
+                for (var i = 0; i < gender_btn.length; i++) {
+                    gender_btn[i].classList.remove('active');
+                }
+                el.classList.toggle('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
