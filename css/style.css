@@ -2262,7 +2262,7 @@ img#preview-idcheck {
 
 .vip-subscription .form-outline {
   width: 39%;
-  min-width: 200px;
+  min-width: 150px;
 }
 
 .vip-subscription .aply-btn {
@@ -2449,20 +2449,18 @@ label,
   right: 0.5em;
   top: 30%;
 }
+
 @media all and (max-width:360px) {
   .payment-page .period-box {
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     margin-top: 1rem;
-}
-}
-@media all and (max-width:330px) {
+  }
   .vip-subscription .form-outline {
     width: 69%;
     margin-top: 20px;
   }
-
   .vip-subscription .aply-btn {
     margin-top: 20px;
   }
