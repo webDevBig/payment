@@ -2234,9 +2234,26 @@ img#preview-idcheck {
   position: absolute;
   top: -10px;
   right: -20px;
-  transform: rotate(-48deg);
+  transform: rotate(-48deg) scale(1);
   z-index: 1;
   filter: drop-shadow(2px 0px 8px rgba(0, 0, 0, .25));
+  animation: zoomanimation 1.3s ease-in-out infinite;
+  transition: all .3s;
+}
+
+@keyframes zoomanimation {
+  0% {
+    transform: rotate(-48deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(-48deg) scale(1.3);
+  }
+
+  100% {
+    transform: rotate(-48deg) scale(1);
+  }
+
 }
 
 .period-btn.active {
@@ -2416,22 +2433,25 @@ img#preview-idcheck {
 .payment-page .transfer-data.hide {
   display: none;
 }
+
 .payment-page .form-select {
   border: 2px solid #027bfe !important;
   color: #027bfe;
   border-radius: 8px;
 }
+
 .payment-page .ideal-data .row-12,
-.payment-page .transfer-data .row-12{
+.payment-page .transfer-data .row-12 {
   justify-content: space-between;
 }
+
 .numbers::-webkit-outer-spin-button,
 .numbers::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.payment-page .blue-underline
-{
+
+.payment-page .blue-underline {
   margin-top: 2.5rem;
 }
 
