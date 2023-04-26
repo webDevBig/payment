@@ -99,6 +99,22 @@
                         <span class="btn-text">Aply</span>
                     </button>
                 </div>
+                <div class="row-12 total-row sub-total-row">
+                    <div class="input-info">
+                        <p class="paratext-1l">Sub Total Amount</p>
+                    </div>
+                    <div class="input-info">
+                        <p class="paratext-1l"><span class="sub-total-value">0€</span></p>
+                    </div>
+                </div>
+                <div class="row-12 total-row">
+                    <div class="input-info">
+                        <p class="paratext-1l">Discount</p>
+                    </div>
+                    <div class="input-info">
+                        <p class="paratext-1l"><span class="coupon-sale">0€</span></p>
+                    </div>
+                </div>
                 <div class="row-12 total-row">
                     <div class="input-info">
                         <h3 class="heading-2b">Total Amount</h3>
@@ -106,6 +122,7 @@
                     </div>
                     <div class="input-info">
                         <h3 class="heading-2b"><span class="total-value">0€</span></h3>
+
                     </div>
                 </div>
                 <div class="col-12 checkout-row">
@@ -163,7 +180,11 @@
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript">
-        var total = document.querySelector('.total-value')
+        var total = document.querySelector('.total-value');
+        var sale = 2;
+        var coupone = document.getElementById("coupon-code");
+        var alert = document.querySelector('.message');
+
         var gender_btn = document.querySelectorAll('.period-btn');
         [].forEach.call(gender_btn, function (el) {
             el.onclick = function (e) {
@@ -172,21 +193,32 @@
                 }
                 el.classList.toggle('active');
 
+                if (coupone.value == ""){
+                    sale = 0;
+                }
+                else{
+                    sale = 2;
+                }
+
                 var t = el.querySelector('.price').innerText;
-                total.innerHTML = t;
-                
+                total.innerHTML = parseFloat(t) - sale + "€";
+                document.querySelector(".sub-total-value").innerHTML = t ;
+
             }
         });
 
         document.getElementById('aply-btn').addEventListener('click', () => {
-            var coupone = document.getElementById("coupon-code").value;
-            var alert = document.querySelector('.message');
-          
-            if (coupone == "") {
+            if (coupone.value == "") {
                 alert.style.opacity = "1"
             } else {
                 alert.style.opacity = "0";
-                total.innerHTML = parseFloat(total.innerText) * 0.9 + "€";
+               
+                sale = 2;
+                total.innerHTML = parseFloat(total.innerText) - sale + "€";
+                document.getElementById('aply-btn').disabled = "true";
+                document.getElementById("coupon-code").disabled = "true";
+
+                document.querySelector(".coupon-sale").innerHTML = sale + "€"
             }
         });
     </script>
