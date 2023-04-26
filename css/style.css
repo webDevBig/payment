@@ -2225,11 +2225,10 @@ img#preview-idcheck {
 }
 
 .best-period i {
-  -webkit-mask: url(../img/BestPrice.svg) no-repeat center;
-  mask: url(../img/BestPrice.svg) no-repeat center;
-  background-color: #017bfd;
-  -webkit-mask-size: 40px;
-  mask-size: 40px;
+  background-image: url(../img/BestPrice.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   width: 40px;
   height: 20px;
   position: absolute;
@@ -2237,13 +2236,15 @@ img#preview-idcheck {
   right: -20px;
   transform: rotate(-48deg);
   z-index: 1;
+  filter: drop-shadow(2px 0px 8px rgba(0, 0, 0, .25));
 }
 
 .period-btn.active {
   background-color: #017bfd;
   color: white;
 }
-.best-period.active{
+
+.best-period.active {
   background-color: #ffd700;
   color: #017bfd;
 }
@@ -2254,6 +2255,14 @@ img#preview-idcheck {
 
 .vip-subscription .col-12:first-of-type {
   margin: 0;
+}
+
+.vip-subscription .message {
+  font-size: 11px;
+  position: absolute;
+  color: #af233a !important;
+  opacity: 0;
+  transition: opacity .5s;
 }
 
 .vip-subscription .row-12 {
@@ -2349,8 +2358,9 @@ img#preview-idcheck {
   background-image: url("https://www.logo.wine/a/logo/Visa_Inc./Visa_Inc.-Logo.wine.svg");
 }
 
-.payment-page .PayPal {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg");
+.payment-page .ideal {
+  background-image: url(../img/free-icon-ideal-196558.png);
+  width: 35px;
 }
 
 .payment-page .bank {
@@ -2394,14 +2404,35 @@ img#preview-idcheck {
   margin: 0 15px;
 }
 
-.payment-page .card-data {
+.payment-page .card-data,
+.payment-page .ideal-data,
+.payment-page .transfer-data {
   margin-top: calc(1.5rem + 10px);
+  display: block;
 }
 
+.payment-page .card-data.hide,
+.payment-page .ideal-data.hide,
+.payment-page .transfer-data.hide {
+  display: none;
+}
+.payment-page .form-select {
+  border: 2px solid #027bfe !important;
+  color: #027bfe;
+  border-radius: 8px;
+}
+.payment-page .ideal-data .row-12,
+.payment-page .transfer-data .row-12{
+  justify-content: space-between;
+}
 .numbers::-webkit-outer-spin-button,
 .numbers::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+.payment-page .blue-underline
+{
+  margin-top: 2.5rem;
 }
 
 

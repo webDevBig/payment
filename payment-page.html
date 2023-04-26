@@ -71,22 +71,23 @@
                         <p class="paratext-1l">Please select a payment method</p>
                     </div>
                     <div class="period-box">
-                        <button type="button" class="btn card-btn" autocomplete="off" aria-pressed="true"><span
-                                class="visa"></span>
+                        <button type="button" class="btn card-btn" id="credit-card" autocomplete="off"
+                            aria-pressed="true"><span class="visa"></span>
                             Credit Card</button>
 
-                        <button type="button" class="btn card-btn" autocomplete="off" aria-pressed="true"><span
-                                class="bancontact"></span>
+                        <button type="button" class="btn card-btn" id="bancontact" autocomplete="off"
+                            aria-pressed="true"><span class="bancontact"></span>
                             Bancontact</button>
-                        <button type="button" class="btn card-btn" autocomplete="off" aria-pressed="true"><span
-                                class="PayPal"></span>
-                            PayPal</button>
-                        <button type="button" class="btn card-btn" autocomplete="off" aria-pressed="true">
+                        <button type="button" class="btn card-btn" id="ideal" autocomplete="off"
+                            aria-pressed="true"><span class="ideal"></span>
+                            Ideal</button>
+                        <button type="button" class="btn card-btn" id="bank-transfer" autocomplete="off"
+                            aria-pressed="true">
                             <span class="bank"></span>Bank transfer</button>
                     </div>
                 </div>
                 <div class="flex-fill flex-vertical">
-                    <div class="card-data flex-fill flex-vertical">
+                    <div class="card-data flex-fill flex-vertical hide">
                         <div class="input-info">
                             <h3 class="heading-2b">Card Number</h3>
                             <p class="paratext-1l">Enter 16-digit card number on the card</p>
@@ -155,6 +156,52 @@
                                     <input id="name" data-bound="name_mock" data-def="Mr. Cardholder" type="text"
                                         class="form-control" placeholder="Cardholder Name" required />
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="blue-underline"></div>
+                    </div>
+                    <div class="ideal-data flex-fill flex-vertical hide ">
+                        <div class="input-info">
+                            <h3 class="heading-2b">Select your bank</h3>
+                        </div>
+                        <div class="row-12">
+                            <div class="form-outline">
+                                <select class="form-select select" aria-label="Default select example">
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                    <option value="4">Four</option>
+                                    <option value="5">Five</option>
+                                    <option value="6">Six</option>
+                                    <option value="7">Seven</option>
+                                    <option value="8">Eight</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="blue-underline"></div>
+                        <div class="row-12">
+                            <div class="input-info">
+                                <h3 class="heading-2b">Delivery</h3>
+                            </div>
+                            <div class="input-info">
+                                <h3 class="heading-2b" style="color:#af233a">Free</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="transfer-data flex-fill flex-vertical hide">
+                        <div class="input-info">
+                            <p class="paratext-1l">Note: we'll ship your order 1 to 2 business days after receiving your
+                                payment. Want it by tomorrow? Choose a different payment method.</p>
+                        </div>
+                        <div class="blue-underline"></div>
+                        <div class="row-12">
+                            <div class="input-info">
+                                <h3 class="heading-2b">Delivery</h3>
+                            </div>
+                            <div class="input-info">
+                                <h3 class="heading-2b" style="color:#af233a">Free</h3>
                             </div>
                         </div>
 
@@ -249,6 +296,28 @@
                 }
                 el.classList.toggle('active');
             }
+        });
+
+
+        document.getElementById('credit-card').addEventListener('click', () => {
+            document.querySelector('.card-data').classList.remove('hide')
+            document.querySelector('.ideal-data').classList.add('hide')
+            document.querySelector('.transfer-data').classList.add('hide')
+        });
+        document.getElementById('ideal').addEventListener('click', () => {
+            document.querySelector('.card-data').classList.add('hide')
+            document.querySelector('.ideal-data').classList.remove('hide')
+            document.querySelector('.transfer-data').classList.add('hide')
+        });
+        document.getElementById('bancontact').addEventListener('click', () => {
+            document.querySelector('.card-data').classList.add('hide')
+            document.querySelector('.ideal-data').classList.add('hide')
+            document.querySelector('.transfer-data').classList.add('hide')
+        });
+        document.getElementById('bank-transfer').addEventListener('click', () => {
+            document.querySelector('.card-data').classList.add('hide')
+            document.querySelector('.ideal-data').classList.add('hide')
+            document.querySelector('.transfer-data').classList.remove('hide')
         });
     </script>
 

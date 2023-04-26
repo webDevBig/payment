@@ -80,9 +80,10 @@
                             <span class="price">30€</span></button>
                         <button type="button" class="btn period-btn" autocomplete="off" aria-pressed="true">Quarter
                             <span class="price">40€</span></button>
-                        <button type="button" class="btn period-btn best-period" autocomplete="off" aria-pressed="true">Yearly
+                        <button type="button" class="btn period-btn best-period" autocomplete="off"
+                            aria-pressed="true">Yearly
                             <span class="price">50€</span>
-                        <i></i></button>
+                            <i></i></button>
                     </div>
                 </div>
                 <div class="row-12">
@@ -90,10 +91,11 @@
                         <h3 class="heading-2b">Coupon code</h3>
                     </div>
                     <div class="form-outline">
-                        <input type="text" class="form-control" id="validationCustom09" value="" required />
+                        <input type="text" class="form-control" id="coupon-code" value="" required />
+                        <label class="message">Please enter a valid coupon code</label>
                     </div>
                     <button type="button" class="btn btn-outline-info aply-btn d-flex align-items-center"
-                        data-mdb-ripple-color="dark">
+                        data-mdb-ripple-color="dark" id="aply-btn">
                         <span class="btn-text">Aply</span>
                     </button>
                 </div>
@@ -103,7 +105,7 @@
                         <p class="paratext-1l">Including VAT</p>
                     </div>
                     <div class="input-info">
-                        <h3 class="heading-2b"><span class="total-value"></span></h3>
+                        <h3 class="heading-2b"><span class="total-value">0€</span></h3>
                     </div>
                 </div>
                 <div class="col-12 checkout-row">
@@ -172,7 +174,19 @@
 
                 var t = el.querySelector('.price').innerText;
                 total.innerHTML = t;
-                console.log(t)
+                
+            }
+        });
+
+        document.getElementById('aply-btn').addEventListener('click', () => {
+            var coupone = document.getElementById("coupon-code").value;
+            var alert = document.querySelector('.message');
+          
+            if (coupone == "") {
+                alert.style.opacity = "1"
+            } else {
+                alert.style.opacity = "0";
+                total.innerHTML = parseFloat(total.innerText) * 0.9 + "€";
             }
         });
     </script>
