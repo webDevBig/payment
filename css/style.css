@@ -2227,7 +2227,6 @@ img#preview-idcheck {
 .best-period i {
   -webkit-mask: url(../img/BestPrice.svg) no-repeat center;
   mask: url(../img/BestPrice.svg) no-repeat center;
-  /* background-image: url(../img/BestPrice.svg); */
   background-color: #017bfd;
   -webkit-mask-size: 40px;
   mask-size: 40px;
