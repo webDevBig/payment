@@ -80,47 +80,58 @@
                         <p class="paratext-1l">Please choose your period</p>
                     </div>
                     <div class="period-box">
-                        <div class="multi-carousel carousel" id="carousel" data-mdb-breakpoint="false" data-mdb-ride="carousel">
-                            <div class="multi-carousel-inner">
-                                <div class="multi-carousel-item">
-                                    <button type="button" class="btn period-btn w-100" autocomplete="off"
-                                        aria-pressed="true">Daily
-                                        <span class="old-price">4€</span>
-                                        <span class="price">2€</span> </button>
-                                </div>
-                                <div class="multi-carousel-item">
-                                    <button type="button" class="btn period-btn w-100" autocomplete="off"
-                                        aria-pressed="true">Weekly
-                                        <span class="old-price">40€</span>
-                                        <span class="price">20€</span></button>
-                                </div>
-                                <div class="multi-carousel-item">
-                                    <button type="button" class="btn period-btn w-100" autocomplete="off"
-                                        aria-pressed="true">Monthly
-                                        <span class="old-price">60€</span>
-                                        <span class="price">30€</span></button>
-                                </div>
-                                <div class="multi-carousel-item">
-                                    <button type="button" class="btn period-btn w-100" autocomplete="off"
-                                        aria-pressed="true">Quarter
-                                        <span class="old-price">80€</span>
-                                        <span class="price">40€</span></button>
-                                </div>
-                                <div class="multi-carousel-item">
-                                    <button type="button" class="btn period-btn best-period w-100" autocomplete="off"
-                                        aria-pressed="true">Yearly
-                                        <span class="old-price">10€</span>
-                                        <span class="price">50€</span>
-                                        <i></i></button>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" tabindex="0" data-mdb-slide="prev">
+
+                        <!-- Carousel wrapper -->
+                        <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center"
+                            data-mdb-ride="carousel" data-mdb-interval="50000" >
+
+                            <!-- Inner -->
+                            <button class="carousel-control-prev position-relative" type="button"
+                                data-mdb-target="#carouselMultiItemExample" data-mdb-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next" type="button" tabindex="0" data-mdb-slide="next">
+                            <div class="carousel-inner py-4">
+                                <!-- Single item -->
+                                <div class="carousel-item active">
+                                    <div class="container">
+                                        <div class="row">
+                                            <button type="button" class="btn period-btn" aria-pressed="true">Daily
+                                                <span class="old-price">4€</span>
+                                                <span class="price">2€</span> </button>
+                                            <button type="button" class="btn period-btn  d-lg-block">Weekly
+                                                <span class="old-price">40€</span>
+                                                <span class="price">20€</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single item -->
+                                <div class="carousel-item">
+                                    <div class="container">
+                                        <div class="row">
+                                            <button type="button" class="btn period-btn" aria-pressed="true">Monthly
+                                                <span class="old-price">60€</span>
+                                                <span class="price">30€</span> </button>
+                                            <button type="button" class="btn period-btn best-period d-lg-block"
+                                                aria-pressed="true">Yearly
+                                                <span class="old-price">100€</span>
+                                                <span class="price">50€</span>
+                                                <i></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <button class="carousel-control-next position-relative" type="button"
+                                data-mdb-target="#carouselMultiItemExample" data-mdb-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
                             </button>
+                            <!-- Inner -->
                         </div>
+                        <!-- Carousel wrapper -->
                     </div>
                 </div>
                 <div class="row-12">
@@ -216,8 +227,8 @@
     <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- MDB -->
-    
-    <script type="text/javascript" src="plugins/js/all.min.js"></script>
+
+    <!-- <script type="text/javascript" src="plugins/js/all.min.js"></script> -->
 
     <!-- Custom scripts -->
     <script type="text/javascript">
@@ -262,62 +273,7 @@
                 document.querySelector(".discount-row").classList.remove("hide")
             }
         });
-        const carousel = document.getElementById('carousel');
-        const instance = MultiCarousel.getInstance(carousel);
-        instance.slideNext();
     </script>
-    
-  
-        const carousel = document.querySelector(".carousel");
-
-        let startX, startY, dist, elapsedTime, startTime;
-
-        carousel.addEventListener("touchstart", function (event) {
-            const touchObj = event.changedTouches[0];
-            startX = touchObj.pageX;
-            startY = touchObj.pageY;
-            startTime = new Date().getTime();
-            event.preventDefault();
-        });
-
-        carousel.addEventListener("touchmove", function (event) {
-            event.preventDefault();
-        });
-
-        carousel.addEventListener("touchend", function (event) {
-            const touchObj = event.changedTouches[0];
-            dist = touchObj.pageX - startX;
-            elapsedTime = new Date().getTime() - startTime;
-            const swipeThreshold = 100; // min distance traveled to be considered swipe
-            const swipeTimeout = 250; // max time allowed to travel that distance
-            if (elapsedTime <= swipeTimeout && Math.abs(dist) >= swipeThreshold) {
-                if (dist > 0) {
-                    carousel.dispatchEvent(new Event("swipe", {
-                        bubbles: true,
-                        detail: {
-                            direction: "right"
-                        }
-                    }));
-                } else {
-                    carousel.dispatchEvent(new Event("swipe", {
-                        bubbles: true,
-                        detail: {
-                            direction: "left"
-                        }
-                    }));
-                }
-            }
-        });
-
-        carousel.addEventListener("swipe", function (event) {
-            const direction = event.detail.direction;
-            if (direction === "left") {
-                // move to next slide
-            } else if (direction === "right") {
-                // move to previous slide
-            }
-        });
-    </script> -->
 </body>
 
 </html>

@@ -2206,21 +2206,24 @@ img#preview-idcheck {
   width: 100%;
 }
 
-.period-box .multi-carousel .multi-carousel-inner .multi-carousel-item {
-  padding: 25px 3px;
-}
-
 .period-btn {
   border-radius: 0.25rem;
   border: 2px solid #017bfd;
   border-color: #017bfd !important;
   padding: 10px;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: inherit;
+  width: 45%;
+  margin: 0 10px;
+}
+
+.period-box .row {
+  display: flex;
+  justify-content: space-between;
 }
 
 .best-period i {
@@ -2362,15 +2365,28 @@ img#preview-idcheck {
   color: #af233a;
 }
 
+.vip-subscription .carousel-control-prev,
+.vip-subscription .carousel-control-next {
+  position: absolute !important;
+
+}
+
+.vip-subscription .carousel-dark .carousel-control-next-icon,
+.vip-subscription .carousel-dark .carousel-control-prev-icon {
+  filter: none;
+}
+
 .vip-subscription .carousel-control-next-icon:after,
 .vip-subscription .carousel-control-prev-icon:after {
   color: #027bfe;
   top: -15%;
-    position: relative;
+  position: relative;
 }
+
 .vip-subscription .carousel-control-next {
   right: -13px;
 }
+
 .vip-subscription .carousel-control-prev {
   left: -13px;
 }
