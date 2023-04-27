@@ -16,6 +16,8 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
 
     <!-- MDB -->
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
     <!-- MDB ESSENTIAL -->
     <link rel="stylesheet" href="css/mdb.min.css" />
     <!-- MDB PLUGINS -->
@@ -78,12 +80,12 @@
                         <p class="paratext-1l">Please choose your period</p>
                     </div>
                     <div class="period-box">
-                        <div class="multi-carousel" data-mdb-breakpoint="false">
+                        <div class="multi-carousel carousel" id="carousel" data-mdb-breakpoint="false" data-mdb-ride="carousel">
                             <div class="multi-carousel-inner">
                                 <div class="multi-carousel-item">
                                     <button type="button" class="btn period-btn w-100" autocomplete="off"
                                         aria-pressed="true">Daily
-                                        <span class="old-price">4€</span> 
+                                        <span class="old-price">4€</span>
                                         <span class="price">2€</span> </button>
                                 </div>
                                 <div class="multi-carousel-item">
@@ -213,7 +215,10 @@
 
     <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- MDB -->
     
+    <script type="text/javascript" src="plugins/js/all.min.js"></script>
+
     <!-- Custom scripts -->
     <script type="text/javascript">
         var total = document.querySelector('.total-value');
@@ -257,12 +262,62 @@
                 document.querySelector(".discount-row").classList.remove("hide")
             }
         });
-        // const carousel = document.getElementById('carousel');
-        // const instance = MultiCarousel.getInstance(carousel);
-        // instance.slideNext();
+        const carousel = document.getElementById('carousel');
+        const instance = MultiCarousel.getInstance(carousel);
+        instance.slideNext();
     </script>
+    
+  
+        const carousel = document.querySelector(".carousel");
 
-<script type="text/javascript" src="plugins/js/all.min.js"></script>
+        let startX, startY, dist, elapsedTime, startTime;
+
+        carousel.addEventListener("touchstart", function (event) {
+            const touchObj = event.changedTouches[0];
+            startX = touchObj.pageX;
+            startY = touchObj.pageY;
+            startTime = new Date().getTime();
+            event.preventDefault();
+        });
+
+        carousel.addEventListener("touchmove", function (event) {
+            event.preventDefault();
+        });
+
+        carousel.addEventListener("touchend", function (event) {
+            const touchObj = event.changedTouches[0];
+            dist = touchObj.pageX - startX;
+            elapsedTime = new Date().getTime() - startTime;
+            const swipeThreshold = 100; // min distance traveled to be considered swipe
+            const swipeTimeout = 250; // max time allowed to travel that distance
+            if (elapsedTime <= swipeTimeout && Math.abs(dist) >= swipeThreshold) {
+                if (dist > 0) {
+                    carousel.dispatchEvent(new Event("swipe", {
+                        bubbles: true,
+                        detail: {
+                            direction: "right"
+                        }
+                    }));
+                } else {
+                    carousel.dispatchEvent(new Event("swipe", {
+                        bubbles: true,
+                        detail: {
+                            direction: "left"
+                        }
+                    }));
+                }
+            }
+        });
+
+        carousel.addEventListener("swipe", function (event) {
+            const direction = event.detail.direction;
+            if (direction === "left") {
+                // move to next slide
+            } else if (direction === "right") {
+                // move to previous slide
+            }
+        });
+    </script> -->
 </body>
 
 </html>

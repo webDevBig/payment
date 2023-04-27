@@ -2205,6 +2205,7 @@ img#preview-idcheck {
 .vip-subscription .period-box {
   width: 100%;
 }
+
 .period-box .multi-carousel .multi-carousel-inner .multi-carousel-item {
   padding: 25px 3px;
 }
@@ -2293,7 +2294,8 @@ img#preview-idcheck {
   align-items: flex-start;
   margin-top: 1rem;
 }
-.vip-subscription .discount-row.hide{
+
+.vip-subscription .discount-row.hide {
   display: none;
 }
 
@@ -2348,14 +2350,29 @@ img#preview-idcheck {
   padding-top: 0.35rem;
   top: 2px;
 }
-.old-price{
+
+.old-price {
   text-decoration: line-through;
   font-size: 0.75rem;
   padding: 0 2px;
 }
-.price{
+
+.price {
   font-size: 1.1rem;
   color: #af233a;
+}
+
+.vip-subscription .carousel-control-next-icon:after,
+.vip-subscription .carousel-control-prev-icon:after {
+  color: #027bfe;
+  top: -15%;
+    position: relative;
+}
+.vip-subscription .carousel-control-next {
+  right: -13px;
+}
+.vip-subscription .carousel-control-prev {
+  left: -13px;
 }
 
 /* payment style */
@@ -2365,6 +2382,7 @@ img#preview-idcheck {
   align-items: center;
   margin-top: 20px;
 }
+
 .payment-page .period-box {
   width: 100%;
   display: grid;
@@ -2534,15 +2552,18 @@ label,
 .payment-page .form-outline.date-input {
   width: 120px;
 }
-.payment-page .form-outline.date-form{
+
+.payment-page .form-outline.date-form {
   display: flex;
   align-items: center;
 }
-#month{
+
+#month {
   margin: 0 15px 0 0;
 }
-#year{
-  margin: 0 0 0 15px ;
+
+#year {
+  margin: 0 0 0 15px;
 }
 
 .input-container input::-webkit-outer-spin-button,
