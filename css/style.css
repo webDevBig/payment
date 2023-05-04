@@ -2197,6 +2197,9 @@ img#preview-idcheck {
 }
 
 
+
+
+
 /* period style */
 .vip-subscription.container-wrapper {
   margin-bottom: 0px;
@@ -2207,66 +2210,159 @@ img#preview-idcheck {
 }
 
 .period-btn {
-  border-radius: 0.25rem;
-  border: 2px solid #017bfd;
-  border-color: #017bfd !important;
-  padding: 20px 10px;
-  display: flex !important;
+  padding: 30px 0;
+  width: 100%;
+  height: fit-content;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 1px solid #d9ebff;
+  border-radius: 13px;
+  box-shadow: none;
+  background: rgb(217, 235, 255, 1);
+  background: linear-gradient(180deg, rgba(217, 235, 255, 1) 18%, rgba(255, 255, 255, 1) 79%);
+  color: black;
+  font-family: "Segoe UI Bold";
+  text-transform: uppercase;
   position: relative;
-  overflow: inherit;
-  width: 43%;
-  margin: 0 10px;
-  font-size: 1.25rem;
-  ;
-}
-
-.period-box .row {
-  display: flex;
-  justify-content: space-between;
-}
-
-.best-period i {
-  background-image: url(../img/1-award.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: -10px;
-  right: -8px;
-  transform: scale(1);
-  z-index: 1;
-  animation: zoomanimation 1.3s ease-in-out infinite;
   transition: all .3s;
 }
 
-@keyframes zoomanimation {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.2);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-
+.period-btn.active {
+  transform: scale(1.2);
 }
 
-.period-btn.active {
-  background-color: #017bfd;
+.carousel-indicators {
+  margin-top: 20px;
+  position: relative;
+}
+
+.period-btn.best-period {
+  background: linear-gradient(180deg, rgba(1, 77, 159, 1) 18%, rgba(2, 123, 254, 1) 79%);
   color: white;
 }
 
-.best-period.active {
-  background-color: #ffd700;
-  color: #017bfd;
+.period-btn .form-check-input[type="checkbox"],
+.card-btn .form-check-input[type="checkbox"] {
+  border: none;
+  background-color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 16px;
+  margin: 0;
+}
+
+.card-btn .form-check-input[type="checkbox"] {
+  border: 1px solid #d9ebff;
+  width: 27px;
+  height: 27px;
+  right: 15px;
+  top: 38%;
+}
+
+.period-btn .form-check-input:active,
+.card-btn .form-check-input:active {
+  filter: brightness(100%);
+}
+
+.period-btn .form-check-input[type=checkbox]:checked:after,
+.card-btn .form-check-input[type=checkbox]:checked:after {
+  display: block;
+  transform: rotate(45deg);
+  width: 0.375rem;
+  height: 0.7125rem;
+  border: 0.125rem solid #1cb88a;
+  border-top: 0;
+  border-left: 0;
+  margin-left: 7px;
+  margin-top: 3px;
+  background-color: transparent;
+}
+
+.card-btn .form-check-input[type=checkbox]:checked:after {
+  width: 0.395rem;
+  height: 0.9125rem;
+  margin-left: 9px;
+  margin-top: 4px;
+}
+
+.period-btn .form-check-input:checked:focus:before,
+.card-btn .form-check-input:checked:focus:before {
+  box-shadow: none;
+}
+
+.period-btn .form-check-input:focus:before,
+.card-btn .form-check-input:focus:before {
+  box-shadow: none;
+}
+
+.period-btn .form-check-input[type=checkbox]:focus:after,
+.card-btn .form-check-input[type=checkbox]:focus:after {
+  background-color: transparent;
+}
+
+.period-btn .form-check-input[type=checkbox]:checked:focus,
+.card-btn .form-check-input[type=checkbox]:checked:focus {
+  background-color: white;
+}
+
+.period-btn h1 {
+  font-size: 47px;
+}
+
+.period-btn .period {
+  font-size: 11px;
+  font-family: "Segoe UI Bold";
+}
+
+.old-price {
+  text-decoration: line-through;
+  font-size: 7px;
+  opacity: .4;
+  font-family: Roboto, sans-serif;
+}
+
+.price {
+  font-size: 12px;
+  font-family: Roboto, sans-serif;
+}
+
+.sale-text {
+  font-size: 13px;
+  font-family: "Segoe UI Bold" !important;
+  margin: 5px 0 0px;
+}
+
+.period-btn.best-period .sale-text {
+  color: #66ebff;
+  margin: 5px 0 13px;
+}
+
+.best-prop {
+  position: absolute;
+  top: 15px;
+  font-size: 7px;
+  font-family: "Segoe UI Bold";
+  color: white;
+}
+
+.vip-subscription .carousel-inner {
+  padding: 30px 0;
+  min-height: 266px;
+}
+
+.vip-subscription .carousel-inner .container {
+  padding: 0 22px;
+}
+
+.period-box .row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
 }
 
 .vip-subscription .col-12 {
@@ -2305,15 +2401,29 @@ img#preview-idcheck {
 
 
 .vip-subscription .sub-total-row {
-  margin-top: calc(1.5rem + 10px);
+  color: black;
 }
 
 .vip-subscription .col-12.checkout-row {
   justify-content: center;
-  margin-top: 2.5rem;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.vip-subscription .col-12.checkout-row a {
+  width: 100%;
+}
+
+.vip-subscription .col-12.checkout-row p {
+  font-size: 9px;
+  font-family: Roboto, sans-serif;
+  margin-top: 15px;
+}
+
+.vip-subscription .col-12.checkout-row p a {
+  text-decoration: underline;
 }
 
 .vip-subscription .checkout-row button {
@@ -2325,18 +2435,41 @@ img#preview-idcheck {
 }
 
 .vip-subscription .form-outline {
-  width: 39%;
-  min-width: 150px;
+  width: 60%;
+  float: left;
 }
 
-.vip-subscription .aply-btn {
-  margin: 0;
+.vip-subscription .form-outline .form-control {
+  border: 1px solid #a4c4ea;
+}
+
+.vip-subscription .form-outline .form-control::placeholder {
+  color: #a4c4ea;
+  opacity: 1;
+  font-family: "Segoe UI Regular";
+}
+
+.vip-subscription .coupon-box {
+  flex-direction: row;
+  padding: 20px 10px 30px;
+}
+
+.coupon-box .input-info {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+.vip-subscription #aply-btn {
+  color: white;
+  padding: 0 25px 3px;
   height: 40px;
-  border-radius: 8px;
-  border: 2px solid #027bfe;
-  color: #027bfe;
-  padding: 0 1rem;
-  text-transform: capitalize;
+  font-family: "Segoe UI Regular";
+  background: var(--custom-blue);
+}
+
+.vip-subscription #aply-btn:hover {
+  background: var(--custom-blue);
 }
 
 .vip-subscription .form-outline .form-control~.form-notch .form-notch-leading,
@@ -2355,21 +2488,13 @@ img#preview-idcheck {
   top: 2px;
 }
 
-.old-price {
-  text-decoration: line-through;
-  font-size: 1rem;
-  padding: 0 2px;
-}
 
-.price {
-  font-size: 1.4rem;
-  color: #af233a;
-}
 
 .vip-subscription .carousel-control-prev,
 .vip-subscription .carousel-control-next {
   position: absolute !important;
-
+  opacity: 1;
+  padding: 0 0 40px;
 }
 
 .vip-subscription .carousel-dark .carousel-control-next-icon,
@@ -2379,7 +2504,7 @@ img#preview-idcheck {
 
 .vip-subscription .carousel-control-next-icon:after,
 .vip-subscription .carousel-control-prev-icon:after {
-  color: #027bfe;
+  color: #014ea2;
   top: -15%;
   position: relative;
 }
@@ -2392,7 +2517,46 @@ img#preview-idcheck {
   left: -30px;
 }
 
+.carousel-indicators [data-mdb-target] {
+  width: 10px;
+  height: 10px;
+  background-color: #ebebeb;
+  border-radius: 50%;
+  border: none;
+}
+
+.carousel-indicators button.active {
+  background-color: #027bfe;
+}
+
+.payment-page .delivery-box p.bold {
+  font-family: "Segoe UI Bold";
+  margin: 0;
+  color: black;
+}
+
 /* payment style */
+h3.title {
+  text-align: center;
+  margin: 17px 0 0;
+  color: black;
+}
+
+.payment-page .input-info p {
+  color: black;
+  font-size: 1rem;
+  font-family: "Segoe UI regular";
+}
+
+.payment-page .header-info .input-info p:first-child {
+  margin: 0 0 -10px;
+}
+
+.payment-page p.bold,
+.vip-subscription p.bold {
+  font-family: "ChunkFive-Regular";
+  color: black;
+}
 
 .payment-page .row-12 {
   display: flex;
@@ -2403,9 +2567,9 @@ img#preview-idcheck {
 .payment-page .period-box {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
   margin-top: 1rem;
 }
 
@@ -2436,31 +2600,69 @@ img#preview-idcheck {
 
 .payment-page .ideal {
   background-image: url(../img/free-icon-ideal-196558.png);
-  width: 35px;
+  background-size: 35px 30px;
 }
 
 .payment-page .bank {
   background-image: url("https://www.svgrepo.com/show/132764/bank-transfer-logo.svg");
 }
 
-.payment-page .card-btn {
-  padding: 10px;
+.coupon-box {
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 2px dotted #017bfd;
+  box-shadow: none;
+  background: rgb(242, 248, 255);
+  background: linear-gradient(180deg, rgba(242, 248, 255, 1) 41%, rgba(255, 255, 255, 1) 80%);
+  color: black;
+  font-family: "Segoe UI Bold";
+}
+
+.payment-page .card-btn {
+  padding: 15px;
+  /* min-width: 172px; */
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
+  border: 2px solid #d9ebff;
+  border-radius: 13px;
+  box-shadow: none;
+  background: rgb(242, 248, 255);
+  background: linear-gradient(180deg, rgba(242, 248, 255, 1) 41%, rgba(255, 255, 255, 1) 80%);
+  color: black;
+  font-family: "Segoe UI Bold";
+  text-transform: uppercase;
+  position: relative;
+}
+
+.payment-page .card-btn.active {
+  padding: 17px;
+  border: none;
+  background: rgb(1, 62, 127);
+  background: linear-gradient(180deg, rgba(1, 62, 127, 1) 41%, rgba(1, 72, 148, 1) 63%, rgba(2, 122, 251, 1) 96%);
+  color: white;
+}
+
+.payment-page .card-btn .info-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .card-btn span {
-  width: 48px;
-  height: 35px;
+  width: 65px;
+  height: 55px;
   background-repeat: no-repeat;
   display: inline-block;
   background-size: 100% 30px;
   background-position: center;
   background-color: white;
   margin: 0 0 5px;
-
+  border-radius: 5px;
 }
 
 .payment-page .card-btn.active {
@@ -2468,12 +2670,8 @@ img#preview-idcheck {
   color: white;
 }
 
-.payment-page .row-12.total-row {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-top: calc(1.5rem + 10px);
+.payment-page .delivery-box {
+  margin: -15px 0;
 }
 
 .m-md {
@@ -2599,6 +2797,69 @@ label,
   top: 30%;
 }
 
+#payNow,
+#payNow:hover,
+#subscription,
+#subscription:hover {
+  width: 100%;
+  height: 50px;
+  margin: 50px auto 0;
+  color: white;
+  font-family: "Segoe UI Bold";
+  background: var(--custom-blue);
+}
+
+.total-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.sub-total-row .input-info p {
+  color: black;
+}
+
+.sub-total-row .input-info p:first-child {
+  margin: 0;
+}
+
+.sub-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 0 5px;
+  border-bottom: 2px solid #d9ebff;
+  margin-top: 5px !important;
+  color: black;
+}
+
+.row-12.total-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 7px;
+}
+
+.total-row p.bold {
+  font-family: "Segoe UI Bold";
+  margin: 0;
+}
+
+.total-row p.bold span {
+  font-size: 10px;
+  margin: 0 0 7px 10px;
+}
+
+
+.blue-underline {
+  border-bottom: 2px solid #d9ebff;
+}
+
 @media all and (max-width:375px) {
   .vip-subscription .carousel-control-prev {
     left: -25px;
@@ -2609,22 +2870,44 @@ label,
   }
 }
 
+@media all and (max-width:420px) {
+
+  .payment-page .period-box {
+    grid-column-gap: 5px;
+  }
+
+  .payment-page .card-btn {
+    padding: 15px 7px;
+    font-size: 15px;
+  }
+
+  .payment-page .card-btn.active {
+    padding: 17px 9px;
+  }
+}
+
+@media all and (max-width:375px) {
+  .period-box .row {
+    grid-column-gap: 15px;
+  }
+}
+
 @media all and (max-width:360px) {
   .payment-page .period-box {
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
     margin-top: 1rem;
   }
 
   .vip-subscription .form-outline {
-    width: 69%;
-    margin-top: 20px;
+    width: 52%;
   }
 
   .vip-subscription .aply-btn {
     margin-top: 20px;
   }
+
 }
 
 @media all and (max-width:330px) {

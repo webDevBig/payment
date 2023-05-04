@@ -16,7 +16,6 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
 
     <!-- MDB -->
-    <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
     <!-- MDB ESSENTIAL -->
     <link rel="stylesheet" href="css/mdb.min.css" />
@@ -24,10 +23,6 @@
     <link rel="stylesheet" href="plugins/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="fonts/segoe/style.css" />
-
-
-
-
 
 </head>
 
@@ -68,121 +63,151 @@
             </div>
         </nav>
     </header>
-    <main class="container-wrapper profile-service-container vip-subscription">
+    <main class="container-wrapper  vip-subscription">
         <div class="container profile-dashboard-wrapper d-flex flex-column position-relative">
             <div class="content-header setting-free-header">
-                <h3>VIP Subscription</h3>
+                <h3 class="title">Get Vip Subscription</h3>
             </div>
             <div>
-                <div class="col-12">
+                <div class="col-12 header-info">
                     <div class="input-info">
-                        <h3 class="heading-2b">Period</h3>
-                        <p class="paratext-1l">Please choose your period</p>
+                        <p class="bold" style="text-align: center;">Period</p>
+                        <p style="text-align: center;">Please choose your period</p>
                     </div>
                     <div class="period-box">
 
                         <!-- Carousel wrapper -->
-                        <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center"
-                            data-mdb-ride="carousel" data-mdb-interval="50000" >
-
+                        <div id="carouselPeriod" class="carousel slide text-center"
+                            data-mdb-ride="carousel" data-mdb-interval="500000">
                             <!-- Inner -->
                             <button class="carousel-control-prev position-relative" type="button"
-                                data-mdb-target="#carouselMultiItemExample" data-mdb-slide="prev">
+                                data-mdb-target="#carouselPeriod" data-mdb-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
-                            <div class="carousel-inner py-4">
+                            <div class="carousel-inner">
                                 <!-- Single item -->
                                 <div class="carousel-item active">
                                     <div class="container">
                                         <div class="row">
-                                            <button type="button" class="btn period-btn" aria-pressed="true">Daily
-                                                <span class="old-price">4€</span>
-                                                <span class="price">2€</span> </button>
-                                            <button type="button" class="btn period-btn  d-lg-block">Weekly
-                                                <span class="old-price">40€</span>
-                                                <span class="price">20€</span>
-                                            </button>
+                                            <div class="period-btn">
+                                                <h1>1</h1>
+                                                <p class="period">week</p>
+                                                <span class="price">19.99€</span>
+                                                <span class="old-price">25.99€</span>
+                                                <p class="sale-text">save 30%</p>
+                                            </div>
+                                            <div class="period-btn best-period active">
+                                                <span class="best-prop">best value</span>
+                                                <h1>1</h1>
+                                                <p class="period">Month</p>
+                                                <span class="price">29.99€</span>
+                                                <span class="old-price">39.99€</span>
+                                                <p class="sale-text">save 30%</p>
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked/>
+                                            </div>
+                                            <div class="period-btn">
+                                                <h1>3</h1>
+                                                <p class="period">Month</p>
+                                                <span class="price">39.99€</span>
+                                                <span class="old-price">51.99€</span>
+                                                <p class="sale-text">save 30%</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <!-- Single item -->
                                 <div class="carousel-item">
                                     <div class="container">
                                         <div class="row">
-                                            <button type="button" class="btn period-btn" aria-pressed="true">Monthly
-                                                <span class="old-price">60€</span>
-                                                <span class="price">30€</span> </button>
-                                            <button type="button" class="btn period-btn best-period d-lg-block"
-                                                aria-pressed="true">Yearly
-                                                <span class="old-price">100€</span>
-                                                <span class="price">50€</span>
-                                                <i></i></button>
+                                            <div class="period-btn">
+                                                <h1>1</h1>
+                                                <p class="period">day</p>
+                                                <span class="price">1.99€</span>
+                                                <span class="old-price">2.59€</span>
+                                                <p class="sale-text">save 30%</p>
+                                            </div>
+                                            <div class="period-btn">
+                                                <h1>1</h1>
+                                                <p class="period">year</p>
+                                                <span class="price">49.99€</span>
+                                                <span class="old-price">64.99€</span>
+                                                <p class="sale-text">save 30%</p>
+                                            </div>
+                                            <div></div>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
                             <button class="carousel-control-next position-relative" type="button"
-                                data-mdb-target="#carouselMultiItemExample" data-mdb-slide="next">
+                                data-mdb-target="#carouselPeriod" data-mdb-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
                             <!-- Inner -->
+                            <!-- Indicators -->
+                            <div class="carousel-indicators">
+                                <button data-mdb-slide-to="0" class="active" data-mdb-target="#carouselPeriod"
+                                    aria-current="true" aria-label="Slide 1"></button>
+                                <button data-mdb-slide-to="1" data-mdb-target="#carouselPeriod"
+                                    aria-label="Slide 1"></button>
+                            </div>
                         </div>
                         <!-- Carousel wrapper -->
                     </div>
                 </div>
-                <div class="row-12">
+                <div class="row-12 coupon-box">
                     <div class="input-info">
-                        <h3 class="heading-2b">Coupon code</h3>
+                        <p class="bold">Coupon code</p>
                     </div>
                     <div class="form-outline">
-                        <input type="text" class="form-control" id="coupon-code" value="" required />
+                        <input type="text" class="form-control" id="coupon-code" value="" required
+                            placeholder="XTR34WfaF" />
                         <label class="message">Please enter a valid coupon code</label>
                     </div>
-                    <button type="button" class="btn btn-outline-info aply-btn d-flex align-items-center"
-                        data-mdb-ripple-color="dark" id="aply-btn">
-                        <span class="btn-text">Apply</span>
-                    </button>
+                    <button type="button" class="btn bg-cus-blue " id="aply-btn">Apply code</button>
                 </div>
-                <div class="row-12 total-row sub-total-row">
-                    <div class="input-info">
-                        <p class="paratext-1l">Sub Total Amount</p>
-                    </div>
-                    <div class="input-info">
-                        <p class="paratext-1l"><span class="sub-total-value">0€</span></p>
-                    </div>
-                </div>
+
                 <div class="row-12 total-row hide discount-row">
                     <div class="input-info">
-                        <p class="paratext-1l">Discount</p>
+                        <p class="bold">Discount</p>
                     </div>
                     <div class="input-info">
-                        <p class="paratext-1l"><span class="coupon-sale">0€</span></p>
+                        <p class="bold coupon-sale">0€></p>
                     </div>
                 </div>
-                <div class="row-12 total-row">
-                    <div class="input-info">
-                        <h3 class="heading-2b">Total Amount</h3>
-                        <p class="paratext-1l">Including VAT</p>
+                <div class="total-box">
+                    <div class="row-12">
+                        <div class="input-info">
+                            <p class="bold">Price</p>
+                        </div>
                     </div>
-                    <div class="input-info">
-                        <h3 class="heading-2b"><span class="total-value">0€</span></h3>
+                    <div class="row-12 sub-total-row">
+                        <div class="input-info">
+                            <p>Sub Total Amount</p>
+                        </div>
+                        <div class="input-info">
+                            <p class="sub-total-value">0€</p>
+                        </div>
+                    </div>
+                    <div class="row-12 total-row">
+                        <div class="input-info">
+                            <p class="bold">Total Amount <span>(including VAT)</span></p>
+                        </div>
+                        <div class="input-info">
+                            <p class="bold total-value">0€</p>
+                        </div>
+                    </div>
 
-                    </div>
                 </div>
                 <div class="col-12 checkout-row">
-                    <div class="input-info">
-                        <p class="paratext-1l">By continue, you agree on Terms and Conditions</p>
-                    </div>
                     <a href="payment-page.html">
-                        <button type="button" class="btn btn-primary bg-cus-blue mt-4 ms-auto">
-                            <i class="fas fa-check me-2"></i>
-                            Checkout
+                        <button type="button" class="btn bg-cus-blue" id="subscription">
+                            Start Subscription
                         </button>
                     </a>
+                    <p>By Continue, you agree on <a>Terms and Conditions</a></p>
                 </div>
             </div>
         </div>
@@ -226,9 +251,6 @@
 
     <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- MDB -->
-
-    <!-- <script type="text/javascript" src="plugins/js/all.min.js"></script> -->
 
     <!-- Custom scripts -->
     <script type="text/javascript">
