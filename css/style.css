@@ -2420,10 +2420,12 @@ img#preview-idcheck {
   font-size: 9px;
   font-family: Roboto, sans-serif;
   margin-top: 15px;
+  color: black;
 }
 
 .vip-subscription .col-12.checkout-row p a {
   text-decoration: underline;
+  color: black;
 }
 
 .vip-subscription .checkout-row button {
