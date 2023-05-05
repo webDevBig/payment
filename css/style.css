@@ -2921,3 +2921,195 @@ label,
     right: -20px;
   }
 }
+
+
+
+/* like page */
+
+.photo-box {
+  width: calc(100% - 30px);
+  height: 560px;
+  background-color: #027bfe;
+  margin: 30px auto 10px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.photo-box::after {
+  content: '';
+  position: absolute;
+  width: calc(100% - 40px);
+  height: 100%;
+  border-radius: 20px;
+  top: -10px;
+  left: 20px;
+  background-color: #027bfe;
+  opacity: .5;
+  z-index: -1;
+}
+
+.photo-box::before {
+  content: '';
+  position: absolute;
+  width: calc(100% - 80px);
+  height: 100%;
+  border-radius: 20px;
+  top: -20px;
+  left: 40px;
+  background-color: #027bfe;
+  opacity: .2;
+  z-index: -1;
+}
+
+.photo-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+  border-radius: 20px;
+  padding: 15px 15px 20px;
+}
+
+.photo-content::after {
+  content: '';
+  background: rgb(0, 0, 0);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 43%, rgba(0, 0, 0, 0.85) 92%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+}
+
+.main-tags-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: -3px 0 0;
+  position: relative;
+  z-index: 2;
+}
+
+.main-tag {
+  border-radius: 15px;
+  width: auto;
+  min-width: 131px;
+  padding: 6px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  font-size: 14px;
+  font-family: "Segoe UI Regular";
+  background-color: #477aff;
+  margin: 3px 0;
+}
+
+.main-tag:first-of-type {
+  background-color: #014698;
+}
+
+.main-tag:last-of-type {
+  background-color: #00154c;
+}
+
+.name {
+  color: white;
+  font-size: 26px;
+  font-family: "Segoe UI Bold";
+}
+
+.tags-box {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 -3px;
+}
+
+.tag {
+  background-color: white;
+  text-align: center;
+  border-radius: 9px;
+  color: black;
+  font-size: 12px;
+  font-family: "Segoe UI Regular";
+  padding: 0 14px;
+  margin: 0 3px;
+}
+
+.location {
+  color: white;
+  position: relative;
+  font-size: 15px;
+  font-family: "Segoe UI Bold";
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.location::before {
+  content: '';
+  position: relative;
+  background-color: white;
+  width: 13px;
+  height: 16px;
+  display: block;
+  float: left;
+  margin: 0 8px 0 0;
+}
+
+.photo-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0 0 0 6px;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.btn-box .btn {
+  border-radius: 50%;
+  width: 86px;
+  height: 86px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 7px;
+}
+
+.btn-box .btn i {
+  height: 38px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.unlike-btn {
+  background-color: white;
+}
+
+.btn-box .unlike-btn i {
+  width: 56px;
+}
+
+.like-btn {
+  background-color: #027bfe;
+}
+
+.btn-box .like-btn i {
+  width: 35px;
+}
