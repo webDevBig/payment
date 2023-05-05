@@ -3101,7 +3101,8 @@ label,
   font-size: 57px;
 }
 
-.unlike-btn {
+.unlike-btn,
+.unlike-btn:hover {
   background-color: white;
 }
 
@@ -3114,6 +3115,7 @@ label,
   height: 100%;
 }
 
-.like-btn {
+.like-btn,
+.like-btn:hover {
   background-color: #027bfe;
 }
