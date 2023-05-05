@@ -2196,6 +2196,9 @@ img#preview-idcheck {
   border: none;
 }
 
+footer a {
+  color: rgba(255, 255, 255, 0.5);
+}
 
 
 
@@ -2972,6 +2975,10 @@ label,
   z-index: 1;
   border-radius: 20px;
   padding: 15px 15px 20px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .photo-content::after {
@@ -3051,15 +3058,10 @@ label,
   justify-content: flex-start;
 }
 
-.location::before {
-  content: '';
-  position: relative;
-  background-color: white;
+.location i {
   width: 13px;
-  height: 16px;
-  display: block;
-  float: left;
-  margin: 0 8px 0 0;
+  font-size: 13px;
+  margin: 0 3px 0 0;
 }
 
 .photo-info {
@@ -3089,13 +3091,12 @@ label,
   justify-content: center;
   align-items: center;
   margin: 0 7px;
+  padding: 0;
 }
 
 .btn-box .btn i {
-  height: 38px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  color: white;
+  font-size: 57px;
 }
 
 .unlike-btn {
@@ -3103,13 +3104,14 @@ label,
 }
 
 .btn-box .unlike-btn i {
-  width: 56px;
+  background-image: url(../img/cross.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 36px;
+  height: 100%;
 }
 
 .like-btn {
   background-color: #027bfe;
-}
-
-.btn-box .like-btn i {
-  width: 35px;
 }
