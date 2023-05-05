@@ -3015,6 +3015,7 @@ label,
   font-family: "Segoe UI Regular";
   background-color: #477aff;
   margin: 3px 0;
+  cursor: pointer;
 }
 
 .main-tag:first-of-type {
@@ -3046,6 +3047,7 @@ label,
   font-family: "Segoe UI Regular";
   padding: 0 14px;
   margin: 0 3px;
+  cursor: pointer;
 }
 
 .location {
